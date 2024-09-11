@@ -1,10 +1,13 @@
 const express=require("express");
 const router=express.Router();
 
-router.get("/",function(req,res){
+
+router.get("/",async function(req,res){
     res.json({
-        message:"succcess"
+        message:"succcess",
+      
     })
+       
 
 })
 

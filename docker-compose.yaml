@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    platform: linux/arm64/v8  # Ensure it's compatible with ARM architecture
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Set your root password
+      MYSQL_DATABASE: my_database        # Optional: create a default database
+      MYSQL_USER: my_user                # Optional: create a user
+      MYSQL_PASSWORD: my_password        # Optional: create a password for the user
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql  # Persist the data
+
+volumes:
+  db_data:
